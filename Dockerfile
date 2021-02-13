@@ -4,8 +4,8 @@ LABEL maintainer="Wellington Mendes - wellmend0@gmail.com"
 
 ENV TZ=America/Fortaleza
 
-COPY deploy.sh deploy.sh
-RUN sh deploy.sh
+COPY bash .
 
-COPY run.sh run.sh
+RUN sh build.sh
+
 CMD sh run.sh

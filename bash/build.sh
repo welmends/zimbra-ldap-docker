@@ -1,6 +1,6 @@
 #!/bin/bash
 
-### > files
+### load config files
 
 touch /tmp/config_entry
 cat <<EOF > /tmp/config_entry
@@ -127,7 +127,7 @@ mx-host=example.com,zimbra.example.com,0
 address=/zimbra.example.com/$(hostname -i)
 EOF
 
-### > commands
+### run build commands
 
 # P.S.: NO PRIVILEGES ON DOCKERFILE (MOVED TO DOCKER-COMPOSE)
 # echo ">>> START DNSMASQ SERVICE"
