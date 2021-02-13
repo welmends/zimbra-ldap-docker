@@ -1,4 +1,4 @@
-# step-by-step installation of zimbra
+# Zimbra Wiki (step-by-step)
 
 ## Installation
 
