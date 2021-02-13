@@ -117,6 +117,21 @@ Y
 Y
 EOF
 
+touch /tmp/data.ldif
+cat <<EOF > /tmp/data.ldif
+dn: uid=user.test,ou=people,dc=zimbra,dc=example,dc=com
+objectClass: inetOrgPerson
+objectClass: amavisAccount
+objectClass: zimbraAccount
+ou: people
+cn: user
+sn: test
+zimbraAccountStatus: active
+zimbraId: t45t4t45-t4t4-5t4t-45t4-t45t4t45t4t4
+mail: user.test@example.com
+userPassword: 123456
+EOF
+
 mv /etc/dnsmasq.conf /etc/dnsmasq.conf.old
 touch /etc/dnsmasq.conf
 cat <<EOF >>/etc/dnsmasq.conf
@@ -150,5 +165,8 @@ su - zimbra -c 'zmldappasswd 123456'
 
 echo ">>> CAT ZIMBRA LDAP PASSWORD"
 su - zimbra -c 'zmlocalconfig -s zimbra_ldap_password ldap_master_url'
+
+echo ">>> ADD LDAP USER TEST"
+su - zimbra -c 'ldapadd -x -D "uid=zimbra,cn=admins,cn=zimbra" -w 123456 -H ldap://zimbra.example.com:389 -f /tmp/data.ldif'
 
 echo ">>> FINISH ZIMBRA DEPLOYMENT"
