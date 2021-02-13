@@ -1,12 +1,15 @@
 version: '3.5'
 services:
   ldap_zimbra:
+    build: .
     container_name: zimbra
     hostname: zimbra.example.com
-    build: .
     tty: true
     privileged: true
     ports:
       - '80:80'
       - '10389:389'
       - '7071:7071'
+    environment:
+      - PASSWORD_LDAP="123456"
+      - PASSWORD_ADMIN="123456"

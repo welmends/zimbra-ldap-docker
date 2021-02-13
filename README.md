@@ -5,14 +5,14 @@
 docker load < zimbra_docker.tar
 ```
 
-## Run container
-```shell
-docker run -p 80:80 -p 10389:389 -p 7071:7071 -h zimbra.example.com --name zimbra --privileged -it zimbra-docker
-```
-
 ## Deploy
 ```shell
 docker-compose up -d
+```
+
+## Run container
+```shell
+docker run -p 80:80 -p 10389:389 -p 7071:7071 -h zimbra.example.com --name zimbra --privileged -it zimbra-docker
 ```
 
 ## Access container
