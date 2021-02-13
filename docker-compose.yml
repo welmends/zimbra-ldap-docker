@@ -1,0 +1,12 @@
+version: '3.5'
+services:
+  ldap_zimbra:
+    container_name: zimbra
+    hostname: zimbra.example.com
+    build: .
+    tty: true
+    privileged: true
+    ports:
+      - '80:80'
+      - '10389:389'
+      - '7071:7071'
