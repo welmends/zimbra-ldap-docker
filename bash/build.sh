@@ -65,12 +65,12 @@ USESPELL="yes"
 VERSIONUPDATECHECKS="TRUE"
 VIRUSQUARANTINE="virus-quarantine.cnxunpmapa@zimbra.example.com"
 ZIMBRA_REQ_SECURITY="yes"
-ldap_bes_searcher_password="$PASSWORD_LDAP"
+ldap_bes_searcher_password="123456"
 ldap_dit_base_dn_config="cn=zimbra"
-ldap_nginx_password="$PASSWORD_LDAP"
+ldap_nginx_password="123456"
 mailboxd_directory="/opt/zimbra/mailboxd"
 mailboxd_keystore="/opt/zimbra/mailboxd/etc/keystore"
-mailboxd_keystore_password="$PASSWORD_ADMIN"
+mailboxd_keystore_password="123456"
 mailboxd_server="jetty"
 mailboxd_truststore="/opt/zimbra/common/lib/jvm/java/lib/security/cacerts"
 mailboxd_truststore_password="changeit"
@@ -143,10 +143,10 @@ echo ">>> RESTART ZIMBRA SERVICES"
 su - zimbra -c 'zmcontrol restart'
 
 echo ">>> UPDATE ZIMBRA ADMIN PASSWORD"
-su - zimbra -c 'zmprov sp admin@zimbra.example.com $PASSWORD_ADMIN'
+su - zimbra -c 'zmprov sp admin@zimbra.example.com 123456'
 
 echo ">>> UPDATE ZIMBRA LDAP PASSWORD"
-su - zimbra -c 'zmldappasswd $PASSWORD_LDAP'
+su - zimbra -c 'zmldappasswd 123456'
 
 echo ">>> CAT ZIMBRA LDAP PASSWORD"
 su - zimbra -c 'zmlocalconfig -s zimbra_ldap_password ldap_master_url'

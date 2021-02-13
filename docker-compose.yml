@@ -10,6 +10,3 @@ services:
       - '80:80'
       - '10389:389'
       - '7071:7071'
-    environment:
-      - PASSWORD_LDAP="123456"
-      - PASSWORD_ADMIN="123456"
