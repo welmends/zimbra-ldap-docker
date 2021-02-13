@@ -1,6 +1,6 @@
 # Zimbra with LDAP in Docker (ubuntu bionic)
 
-## Load zimbra-docker image from zimbra-docker.tar
+## Load zimbra-docker image from [zimbra-docker.tar](https://drive.google.com/file/d/1336l0ItbYXmWp-JWKf0jWAIyDGBXsyiM/view?usp=sharing)
 ```shell
 docker load < zimbra_docker.tar
 ```
