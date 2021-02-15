@@ -132,21 +132,7 @@ mail: user.test@example.com
 userPassword: 123456
 EOF
 
-mv /etc/dnsmasq.conf /etc/dnsmasq.conf.old
-touch /etc/dnsmasq.conf
-cat <<EOF >>/etc/dnsmasq.conf
-server=8.8.8.8
-listen-address=127.0.0.1
-domain=example.com
-mx-host=example.com,zimbra.example.com,0
-address=/zimbra.example.com/$(hostname -i)
-EOF
-
 ### run build commands
-
-# P.S.: NO PRIVILEGES ON DOCKERFILE (MOVED TO DOCKER-COMPOSE)
-# echo ">>> START DNSMASQ SERVICE"
-# service dnsmasq restart
 
 echo ">>> INSTALL ZIMBRA"
 cd /zcs* && ./install.sh -s < /tmp/key_entry
