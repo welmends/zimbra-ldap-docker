@@ -17,7 +17,7 @@ docker run -p 80:80 -p 10389:389 -p 7071:7071 -h zimbra.example.com --name zimbr
 
 ## Access container
 ```shell
-sudo docker exec -it zimbra bash
+docker exec -it zimbra bash
 ```
 
 ## Zimbra authentication
